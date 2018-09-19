@@ -8,5 +8,71 @@
 
 nav {
   position: relative;
-  width: 100%;
+  width: 20%;
+}
+
+nav input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+}
+
+nav label {
+  background-color: firebrick;
+  display: block;
+  padding: 0.5em;
+  transition: 0.5s;
+}
+
+nav label:hover {
+  border-radius: 7px;
+}
+
+.nav-content {
+  position: absolute;
+  top: 72%;
+  left: -60%;
+  list-style: none;
+  max-height: 0;
+  padding: 0 5px;
+  overflow: hidden;
+  transition: all 0.35s;
+}
+
+.nav-content li {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.nav-content a {
+  text-decoration: none;
+}
+
+.nav-content a:visited {
+  color: #fff;
+}
+
+.nav-content a:focus {
+  color: firebrick;
+}
+
+.nav-content a:hover {
+  color: royalblue;
+}
+
+nav input:checked ~ label {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 7px;
+  color: black;
+}
+
+nav input:checked ~ .nav-content {
+  max-height: 15em;
+  border: 1px solid grey;
+  border-radius: 7px;
+  background-color: lightgrey;
 }
