@@ -5,3 +5,8 @@
   max-width: 40em;
   width: 100%;
 }
+
+nav {
+  position: relative;
+  width: 100%;
+}
