@@ -19,14 +19,43 @@ nav input {
 }
 
 nav label {
-  background-color: firebrick;
   display: block;
+  margin-top: 10%;
   padding: 0.5em;
   transition: 0.5s;
+  background-color: #fff;
 }
 
-nav label:hover {
-  border-radius: 7px;
+.nav-button {
+  position: absolute;
+  display: inline-block;
+  top: 25%;
+  left: 0;
+  height: 4px;
+  margin: 1px;
+  background-color: grey;
+  width: 33%;
+  transition: 0.35s;
+}
+
+.nav-button:before,
+.nav-button:after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  height: 4px;
+  margin: 1px;
+  background-color: grey;
+  width: 100%;
+  transition: 0.35s;
+}
+
+.nav-button:before {
+  top: -12px;
+}
+
+.nav-button:after {
+  top: 10px;
 }
 
 .nav-content {
@@ -63,16 +92,28 @@ nav label:hover {
   color: royalblue;
 }
 
-nav input:checked ~ label {
-  background-color: white;
-  border: 1px solid grey;
-  border-radius: 7px;
-  color: black;
-}
-
 nav input:checked ~ .nav-content {
   max-height: 15em;
   border: 1px solid grey;
   border-radius: 7px;
   background-color: lightgrey;
+}
+
+nav input:checked ~ label .nav-button {
+  background-color: #fff;
+  transform: translateX(50%);
+}
+
+nav input:checked ~ label .nav-button:before,
+nav input:checked ~ label .nav-button:after {
+  width: 50%;
+  background-color: firebrick;
+}
+
+nav input:checked ~ label .nav-button:before {
+  transform: translateY(12px) rotate(45deg);
+}
+
+nav input:checked ~ label .nav-button:after {
+  transform: translateY(-10px) rotate(-45deg);
 }
